@@ -1,10 +1,11 @@
 import React from 'react';
+import Project from '@/Components/Projects'
 
 const HeroSection = () => {
     return (
         <div>
 
-            <div className="flex flex-col px-[171px] items-center w-full">
+            <div className="flex flex-col px-[171px] w-full">
 
                 {/* MAIN SECTION */}
                 <div className="flex gap-[18px] items-center">
@@ -30,7 +31,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* QUOTE */}
-                <div className="flex px-[155px] py-[80px]">
+                <div className="flex px-[155px] py-[80px] justify-center">
 
                     <div className="relative flex">
 
@@ -52,6 +53,8 @@ const HeroSection = () => {
                     </div>
 
                 </div>
+
+                <Project />
 
             </div>
         </div>

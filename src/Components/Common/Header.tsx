@@ -1,7 +1,10 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+
+    const { t, i18n } = useTranslation();
 
     const langRef: any = useRef(null)
     const [active, setActive] = useState('home')
@@ -20,6 +23,10 @@ const Header = () => {
         };
     }, [langRef]);
 
+    const changeLanguage = (lng: any) => {
+        i18n.changeLanguage(lng);
+    };
+
     return (
         <div className='relative'>
 
@@ -29,12 +36,12 @@ const Header = () => {
                     {/* LEFT */}
                     <div className="flex gap-2">
                         <img src="/assets/images/SVG/logo.svg" alt="Logo" />
-                        <p>Prateek</p>
+                        <p>{t('headTitle')}</p>
                     </div>
 
                     {/* RIGHT */}
                     <div className="flex gap-[32px]">
-                        <p className={`${active !== 'home' && 'gray'}`}><span className='primary'>#</span>home</p>
+                        <p className={`${active !== 'home' && 'gray'}`}><span className='primary'>#</span>{t('home')}</p>
                         <p className={`${active !== 'work' && 'gray'}`}><span className='primary'>#</span>work</p>
                         <p className={`${active !== 'about-me' && 'gray'}`}><span className='primary'>#</span>about-me</p>
                         <p className={`${active !== 'contacts' && 'gray'}`}><span className='primary'>#</span>contacts</p>
@@ -47,12 +54,18 @@ const Header = () => {
                                 <div ref={langRef} className="absolute flex flex-col top-[105%] left-0 p-2 gap-1 border border-[#ABB2BF]">
                                     <p
                                         className='hover:text-[#C778DD]'
-                                        onClick={() => setLang('EN')}
+                                        onClick={() => {
+                                            changeLanguage('en')
+                                            setLang('EN')
+                                        }}
                                     >
                                         EN</p>
                                     <p
                                         className='hover:text-[#C778DD]'
-                                        onClick={() => setLang('JP')}
+                                        onClick={() => {
+                                            changeLanguage('jp')
+                                            setLang('JP')
+                                        }}
                                     >
                                         JP</p>
                                 </div>

@@ -1,10 +1,7 @@
-import Image from "next/image";
-import HomePage from "@/Components/HomePage"
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="">
-      <HomePage />
-    </div>
-  );
+
+  redirect('/en'); // Default lang
+
 }

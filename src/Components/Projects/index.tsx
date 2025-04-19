@@ -1,12 +1,11 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import * as constact from './constant.json'
 
 const index = () => {
 
+    const [showMore, setShowMore] = useState(false)
     const Projects: any = constact
-    // const [projects, setProjects] = useState(constant)
-    console.log("🚀 ~ Projects:", Projects.list)
 
 
     return (
@@ -18,12 +17,17 @@ const index = () => {
                     <p className='border-b border-[#C778DD] w-[511px]'></p>
                 </div>
 
-                <button className='text-base font-medium'>View all ~~&gt;</button>
+                <button
+                    className='text-base font-medium'
+                    onClick={() => setShowMore(!showMore)}
+                >
+                    {showMore ? "View Less <~~" : "View all ~~>"}
+                </button>
             </div>
 
             <div className="grid grid-cols-3 gap-y-[32px]">
 
-                {Projects.list && Projects.list.slice(0, 3).map((item: any, index: any) => {
+                {Projects.list && (showMore ? Projects.list : Projects.list.slice(0, 3)).map((item: any, index: any) => {
                     return (
                         <div key={index} className="flex flex-col border border-[#ABB2BF] hover:border-[#C778DD] w-[330px]">
                             <img

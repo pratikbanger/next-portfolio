@@ -41,10 +41,10 @@ const Header = () => {
 
                     {/* RIGHT */}
                     <div className="flex gap-[32px]">
-                        <p className={`${active !== 'home' && 'gray'}`}><span className='primary'>#</span>{t('home')}</p>
-                        <p className={`${active !== 'work' && 'gray'}`}><span className='primary'>#</span>work</p>
-                        <p className={`${active !== 'about-me' && 'gray'}`}><span className='primary'>#</span>about-me</p>
-                        <p className={`${active !== 'contacts' && 'gray'}`}><span className='primary'>#</span>contacts</p>
+                        <p className={`${active !== 'home' && 'gray'} cursor-pointer`}><span className='primary'>#</span>{t('navOpt1')}</p>
+                        <p className={`${active !== 'work' && 'gray'} cursor-pointer`}><span className='primary'>#</span>{t('navOpt2')}</p>
+                        <p className={`${active !== 'about-me' && 'gray'} cursor-pointer`}><span className='primary'>#</span>{t('navOpt3')}</p>
+                        <p className={`${active !== 'contacts' && 'gray'} cursor-pointer`}><span className='primary'>#</span>{t('navOpt4')}</p>
                         <div className='relative flex gap-1 cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
                             <p>{lang}</p>
                             <img src={`/assets/images/SVG/drop-down-${isOpen ? 'close' : 'open'}.svg`} alt="" />

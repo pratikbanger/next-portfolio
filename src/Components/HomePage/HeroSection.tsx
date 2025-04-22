@@ -1,7 +1,11 @@
 import React from 'react';
 import Project from '@/Components/Projects'
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
+
+    const { t, i18n } = useTranslation();
+
     return (
         <div>
 
@@ -11,10 +15,12 @@ const HeroSection = () => {
                 <div className="flex gap-[18px] items-center">
                     {/* LEFT */}
                     <div className="flex flex-col w-[537px] h-[227px] gap-[32px]">
-                        <p className='text-[32px] font-medium'>Prateek is a <span className='primary'>Frontend</span> and <span className='primary'>Backend</span> Developer</p>
+                        {/* <p className='text-[32px] font-medium'>Prateek is a <span className='primary'>Frontend</span> and <span className='primary'>Backend</span> Developer</p> */}
+                        <p className='text-[32px] font-medium' dangerouslySetInnerHTML={{ __html: t("heroHeadLine") }}></p>
 
                         <div className="flex flex-col gap-6">
-                            <p className='text-base gray w-[463px]'>He crafts responsive websites where technologies meet creativity</p>
+                            {/* <p className='text-base gray w-[463px]'>He crafts responsive websites where technologies meet creativity</p> */}
+                            <p className='text-base gray w-[463px]'>{t('heroTagLine')}</p>
                             <button className='border border-[#C778DD] w-[148px] h-[37px]'>Contact me!!</button>
                         </div>
                     </div>

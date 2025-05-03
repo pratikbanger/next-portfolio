@@ -1,6 +1,7 @@
 import React from 'react';
 import Project from '@/Components/Projects'
 import { useTranslation } from 'react-i18next';
+import { pathPrefix } from '@/utils/pathPrefix';
 
 const HeroSection = () => {
 
@@ -27,7 +28,7 @@ const HeroSection = () => {
 
                     {/* RIGHT */}
                     <div className="flex flex-col">
-                        <img src="/assets/images/SVG/hero-image.svg" alt="" />
+                        <img src={pathPrefix("/assets/images/SVG/hero-image.svg")} alt="" />
 
                         <div className='w-full flex items-center p-2 gap-2.5 border border-[#ABB2BF]'>
                             <div className='w-4 h-4 border border-[#C778DD] bg-[#C778DD] '></div>
@@ -43,7 +44,7 @@ const HeroSection = () => {
 
                         <img
                             className='absolute left-[12px] top-[-15px]'
-                            src="/assets/images/SVG/quote.svg"
+                            src={pathPrefix("/assets/images/SVG/quote.svg")}
                             alt=""
                         />
 
@@ -52,7 +53,7 @@ const HeroSection = () => {
 
                         <img
                             className='absolute right-[10px] bottom-[-12px]'
-                            src="/assets/images/SVG/quote.svg"
+                            src={pathPrefix("/assets/images/SVG/quote.svg")}
                             alt=""
                         />
 

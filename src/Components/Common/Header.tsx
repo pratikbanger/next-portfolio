@@ -1,4 +1,5 @@
 'use client'
+import { pathPrefix } from '@/utils/pathPrefix';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -35,7 +36,7 @@ const Header = () => {
                 <div className="flex justify-between">
                     {/* LEFT */}
                     <div className="flex gap-2">
-                        <img src="/assets/images/SVG/logo.svg" alt="Logo" />
+                        <img src={pathPrefix("/assets/images/SVG/logo.svg")} alt="Logo" />
                         <p>{t('headTitle')}</p>
                     </div>
 
@@ -47,7 +48,7 @@ const Header = () => {
                         <p className={`${active !== 'contacts' && 'gray'} cursor-pointer`}><span className='primary'>#</span>{t('navOpt4')}</p>
                         <div className='relative flex gap-1 cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
                             <p>{lang}</p>
-                            <img src={`/assets/images/SVG/drop-down-${isOpen ? 'close' : 'open'}.svg`} alt="" />
+                            <img src={pathPrefix(`/assets/images/SVG/drop-down-${isOpen ? 'close' : 'open'}.svg`)} alt="" />
 
                             {/* OPTIONS */}
                             {isOpen &&

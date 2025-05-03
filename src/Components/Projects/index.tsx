@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import * as constact from './constant.json'
 
-const index = () => {
+const Projects = () => {
 
     const [showMore, setShowMore] = useState(false)
     const Projects: any = constact
@@ -63,4 +63,4 @@ const index = () => {
     );
 }
 
-export default index;
+export default Projects;

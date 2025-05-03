@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Needed if using `next/image`
   },
+  // If your repo is not at the root domain (like github.com/user/repo),
+  // set the basePath and assetPrefix
+  basePath: '/next-portfolio',
+  assetPrefix: '/next-portfolio/',
 };
 
 export default nextConfig;

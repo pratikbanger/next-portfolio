@@ -1,0 +1,10 @@
+{
+    "welcome": "Welcome to React",
+    "headTitle": "Prateek",
+    "navOpt1": "home",
+    "navOpt2": "work",
+    "navOpt3": "about-me",
+    "navOpt4": "contact-us",
+    "heroHeadLine": "Hey, I'm <span class='primary'>Prateek</span> <br /> A <span class='primary'>Full-Stack</span> Developer",
+    "heroTagLine": "From pixel-perfect UIs to rock-solid APIs — I build the web, end to end."
+}
